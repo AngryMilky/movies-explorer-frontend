@@ -5,10 +5,10 @@ import SearchForm from "./SearchForm/SearchForm";
 
 function Movies() {
   return (
-    <section className="movies">
+    <main className="movies">
       <SearchForm />
       <MoviesCardList />
-    </section>
+    </main>
   )
 }
 

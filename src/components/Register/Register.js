@@ -4,9 +4,9 @@ import logo from '../../images/logo.svg';
 
 function Register() {
     return (
-        <section className="register">
+        <main className="register">
             <Link to='/'><img src={logo} alt="Логотип" className="logo" /></Link>
-            <h2 className="register__title">Добро пожаловать!</h2>
+            <h1 className="register__title">Добро пожаловать!</h1>
             <form className="register__form">
                 <label className="register__form-label">Имя</label>
                 <input
@@ -14,6 +14,9 @@ function Register() {
                     name="name"
                     type="text"
                     id="name"
+                    minLength="2"
+                    maxLength="30" 
+                    placeholder="Ваше имя"
                     required
                 />
                 <label className="register__form-label">E-mail</label>
@@ -22,6 +25,7 @@ function Register() {
                     name="email"
                     type="email"
                     id="email"
+                    placeholder="Ваш email"
                     required
                 />
                 <label className="register__form-label">Пароль</label>
@@ -30,6 +34,9 @@ function Register() {
                     name="password"
                     type="password"
                     id="password"
+                    minLength="2"
+                    maxLength="30"
+                    placeholder="Ваш пароль"
                     required
                 />
                 <button
@@ -43,7 +50,7 @@ function Register() {
                 <p className="register__form-signin-text">Уже зарегистрированы? </p>
                 <Link className="register__form-signin-link" to="/sign-in">Войти</Link>
             </div>
-        </section>
+        </main>
     )
 }
 

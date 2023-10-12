@@ -12,9 +12,9 @@ function Main() {
       <Promo />
       <NavTab />
       <AboutProject />
-      <Techs />
-      <AboutMe />
-      <Portfolio />
+      <Techs /> 
+      <AboutMe />  
+      <Portfolio /> 
     </main>
   )
 }

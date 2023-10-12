@@ -17,7 +17,7 @@ function Header({ loggedIn, headerClass, navigationClass }) {
 
       {loggedIn && (
         < >
-          <Link to='/'><img src={logo} alt="Логотип" className="logo logo__header" /></Link>
+          <Link to='/'><img src={logo} alt="Логотип" className="logo header__logo" /></Link>
           <div className="header__auth-container">
             <Navigation navigationClass={navigationClass} />
           </div>
@@ -29,13 +29,12 @@ function Header({ loggedIn, headerClass, navigationClass }) {
 
       {!loggedIn && (
         <>
-          <Link to='/'><img src={logo} alt="Логотип" className="logo logo__header" /></Link>
+          <Link to='/'><img src={logo} alt="Логотип" className="logo header__logo" /></Link>
           <div className="header__container">
-
-            <div className="header__navigation">
+            <nav className="header__navigation">
               <NavLink to="/sign-up" className="header__register-link">Регистрация</NavLink>
               <NavLink to="/sign-in" className="header__login-link">Войти</NavLink>
-            </div>
+            </nav>
           </div>
         </>
       )

@@ -4,9 +4,9 @@ import logo from '../../images/logo.svg';
 
 function Login() {
   return (
-      <section className="login">
+      <main className="login">
         <Link to='/'><img src={logo} alt="Логотип" className="logo" /></Link>
-        <h2 className="login__title">Рады видеть!</h2>
+        <h1 className="login__title">Рады видеть!</h1>
         <form className="login__form">
           <label className="login__form-label">E-mail</label>
           <input
@@ -14,6 +14,7 @@ function Login() {
             name="email"
             type="email"
             id="email"
+            placeholder="Ваш email"
             required
           />
           <label className="login__form-label">Пароль</label>
@@ -22,6 +23,7 @@ function Login() {
             name="password"
             type="password"
             id="password"
+            placeholder="Ваш пароль"
             required
           />
           <button
@@ -34,7 +36,7 @@ function Login() {
             <p className="login__form-signup-text">Еще не зарегистрированы? </p>
             <Link className="login__form-signup-link" to="/sign-up">Регистрация</Link>
           </div>
-      </section>
+      </main>
     )
 }
 

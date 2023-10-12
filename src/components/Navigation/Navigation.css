@@ -15,6 +15,10 @@
   text-decoration: none;
 }
 
+.navigation__movies-link:hover {
+  opacity: 0.8;
+}
+
 .navigation__saved-movies-link {
   font-weight: 400;
   font-size: 14px;
@@ -22,6 +26,10 @@
   color: #000000;
   text-decoration: none;
   margin-left: 22px;
+}
+
+.navigation__saved-movies-link:hover {
+  opacity: 0.8;
 }
 
 .navigation__account {
@@ -40,6 +48,10 @@
   text-decoration: none;
   margin-right: 14px;
   margin-bottom: 2px;
+}
+
+.navigation__account-link:hover {
+  opacity: 0.8;
 }
 
 .navigation__main-account-icon {
