@@ -52,6 +52,11 @@
   color: #A0A0A0;
 }
 
+.search-form__container_input:focus {
+  outline: none;
+  background-color:  hsl(296, 35%, 92%);
+}
+
 .search-form__container_button {
   margin-right: 13px;
   background-image: url(../../../images/button_search.svg);

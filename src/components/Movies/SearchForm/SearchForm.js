@@ -4,7 +4,7 @@ import searchIcon from '../../../images/icon__search.svg';
 
 function SearchForm() {
   return (
-    <div className="search-form">
+    <section className="search-form">
       <form className="search-form__container">
         <div className="search-line">
           <img className="search-form__container_icon" src={searchIcon} alt="Лупа"></img>
@@ -13,7 +13,7 @@ function SearchForm() {
         </div>
         <FilterCheckbox />
       </form>
-    </div>
+    </section>
   )
 }
 
