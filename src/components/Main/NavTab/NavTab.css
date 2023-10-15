@@ -15,11 +15,17 @@
   text-align: center;
   color: #FFFFFF;
   padding: 26px 15px 24px;
+  transition: opacity 0.35s linear;
+  cursor: pointer;
 }
+
+.navtab__link:hover {
+  opacity: 70%;
+}
+
 
 @media screen and (max-width: 768px) {
   .navtab {
-    padding-left: 16px;
     column-gap: 11px;
   }
 }

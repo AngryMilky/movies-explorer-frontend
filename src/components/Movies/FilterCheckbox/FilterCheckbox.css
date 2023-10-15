@@ -4,7 +4,7 @@
   align-items: center;
   cursor: pointer;
   margin: 0;
-  margin-right: 30px;
+  margin-right: 31px;
 }
 
 .filter-checkbox__container {
@@ -64,7 +64,7 @@
 
 @media screen and (max-width: 770px) {
   .filter-checkbox {
-    margin-right: 19px;
+    margin-right: 3px;
   }
 
   .filter-checkbox__container {
@@ -74,8 +74,7 @@
 
 @media screen and (max-width: 500px) {
   .filter-checkbox {
-    margin-top: 33px;
-    margin-right: 150px;
+    margin-top: 34px;
   }
 
   .filter-checkbox__container {
@@ -84,12 +83,5 @@
 
   .filter-checkbox__text {
     font-size: 11px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .filter-checkbox {
-    margin-top: 37px;
-    margin-right: 7px;
   }
 }

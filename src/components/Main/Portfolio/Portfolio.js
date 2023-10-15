@@ -9,6 +9,7 @@ function Portfolio() {
           <a
             href="https://github.com/AngryMilky/how-to-learn"
             className="portfolio__link"
+            target="_blank"
             >
             Статичный сайт
             <p className="portfolio__link-arrow">&#8599;</p>
@@ -18,6 +19,7 @@ function Portfolio() {
           <a
             href="https://angrymilky.github.io/russian-travel/"
             className="portfolio__link"
+            target="_blank"
             >
             Адаптивный сайт
             <p className="portfolio__link-arrow">&#8599;</p>
@@ -27,6 +29,7 @@ function Portfolio() {
           <a
             href="https://mesto.milky.nomoredomainsicu.ru"
             className="portfolio__link"
+            target="_blank"
             >
             Одностраничное приложение
             <p className="portfolio__link-arrow">&#8599;</p>
