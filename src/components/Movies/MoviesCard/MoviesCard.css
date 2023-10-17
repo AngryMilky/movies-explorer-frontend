@@ -73,7 +73,23 @@
   border: none;
   width: 21px;
   height: 21px;
-  display: none;
+  /* display: none; */
+}
+
+.movies-card__button-saved:hover {
+  cursor: pointer;
+}
+
+.movies-card__button-delete_active {
+  background-image: url(../../../images/button_delete.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F9F9F9;
+  border-radius: 30px;
+  border: none;
+  width: 21px;
+  height: 21px;
+  
 }
 
 .movies-card__button-delete {

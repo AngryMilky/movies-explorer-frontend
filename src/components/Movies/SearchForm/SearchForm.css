@@ -87,6 +87,16 @@
   border-right: #CBCBCB 1px solid;
 }
 
+.search-form__error {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #EE3465;
+  text-align: center;
+  margin-top: 5px;
+  min-height: 14px;
+}
+
 @media screen and (max-width: 770px) {
   .search-form {
     padding-bottom: 40px;

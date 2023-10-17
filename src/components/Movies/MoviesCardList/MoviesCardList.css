@@ -38,6 +38,15 @@
   opacity: 0.8;
 }
 
+.movies-card-list__not-found {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 30px;
+  text-align: center;
+  display: none;
+  margin: 0;
+}
+
 @media screen and (max-width: 1230px) {
   .movies-card-list__container {
     width: calc(100% - 60px);

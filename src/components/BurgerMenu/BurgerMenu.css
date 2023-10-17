@@ -10,8 +10,18 @@
   z-index: 1;
 }
 
-.burger-menu__hidden {
-  display: none;
+.burger-menu_opened {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.burger-menu_hidden {
+  visibility: hidden;
+  opacity: 0;
+
 }
 
 .burger-menu__close-button {
