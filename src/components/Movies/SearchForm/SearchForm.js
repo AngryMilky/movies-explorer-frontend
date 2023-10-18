@@ -63,10 +63,6 @@ function SearchForm ({onSearch, onSubmitCheckbox}) {
       onSubmitCheckbox(!isChecked);
   }
 
-
-
-
-
   return (
     <section className="search-form">
       <form 
@@ -91,7 +87,7 @@ function SearchForm ({onSearch, onSubmitCheckbox}) {
           ></input>
           <button className="search-form__container_button" type="submit">Найти</button>
         </div>
-        <span className="search-form__error">{searchError.errorMessage}</span>
+        
         <FilterCheckbox 
           isChecked={isChecked}
           onSubmitCheckbox={handleChangeCheckbox}
