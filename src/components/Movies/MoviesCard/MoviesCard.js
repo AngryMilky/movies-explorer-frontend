@@ -35,7 +35,7 @@ function MoviesCard({ moviesCardClassDeleteButton, moviesCardClassSavedButton, m
       </div>
       <div className="movies-card__button">
         <button
-          className={isSaved ? { moviesCardClassSavedButton } : { moviesCardClassSaveButton }}
+          className={isSaved ? moviesCardClassSavedButton : moviesCardClassSaveButton}
 
           type="button"
           onClick={handleSaveMovie}
