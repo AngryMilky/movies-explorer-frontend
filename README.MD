@@ -2,7 +2,7 @@
 
 Репозиторий для фронтенда приложения проекта `Movies Explorer`.
 
-Ссылка на пул реквест:
+Ссылка на пул реквест: https://github.com/AngryMilky/movies-explorer-frontend/pull/2
 
 Ссылка на задеплоенный на сервере проект: https://diplom.milky.nomoredomainsrocks.ru/movies
 
