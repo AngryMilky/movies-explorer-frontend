@@ -16,7 +16,7 @@ import {
     LOAD_CARDS_625, LOAD_CARDS_320
 } from "../../../utils/constants";
 
-function MoviesCardList({foundMovies, onSaveMovie, onDeleteMovie, savedMovies}) {
+function MoviesCardList({moviesCardClassDeleteButton, moviesCardClassSavedButton, moviesCardClassSaveButton, foundMovies, onSaveMovie, onDeleteMovie, savedMovies}) {
   const location = useLocation();
 
   //max количество карточек в блоке при первом поиске
@@ -127,6 +127,9 @@ function MoviesCardList({foundMovies, onSaveMovie, onDeleteMovie, savedMovies}) 
             onSaveMovie={onSaveMovie}
             onDeleteMovie={onDeleteMovie}
             savedMovies={savedMovies}
+            moviesCardClassDeleteButton={moviesCardClassDeleteButton} 
+            moviesCardClassSavedButton={moviesCardClassSavedButton}
+            moviesCardClassSaveButton={moviesCardClassSaveButton}
           />
         ))}
       </ul>

@@ -3,7 +3,7 @@ import SearchForm from "../Movies/SearchForm/SearchForm";
 import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList";
 import Preloader from "../Preloader/Preloader";
 
-function SavedMovies({onSearch, onSubmitCheckbox, onSaveMovie, onDeleteMovie, savedMovies, preloaderStatus}) {
+function SavedMovies({moviesCardClassDeleteButton, moviesCardClassSavedButton, moviesCardClassSaveButton, onSearch, onSubmitCheckbox, onSaveMovie, onDeleteMovie, savedMovies, preloaderStatus}) {
     return (
         <section className="saved-movies">
             <SearchForm
@@ -15,6 +15,9 @@ function SavedMovies({onSearch, onSubmitCheckbox, onSaveMovie, onDeleteMovie, sa
                 <Preloader />
             ) : (
                 <MoviesCardList
+                    moviesCardClassDeleteButton={moviesCardClassDeleteButton} 
+                    moviesCardClassSavedButton={moviesCardClassSavedButton}
+                    moviesCardClassSaveButton={moviesCardClassSaveButton}
                     foundMovies={savedMovies}
                     onSaveMovie={onSaveMovie}
                     onDeleteMovie={onDeleteMovie}
