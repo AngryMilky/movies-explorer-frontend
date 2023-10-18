@@ -1,5 +1,4 @@
 export const BASE_URL = 'https://api.diplom.milky.nomoredomainsrocks.ru';
-
 export const BASE_BEATFILMMOVIES_URL = 'https://api.nomoreparties.co';
 
 // Размеры экрана устройств
