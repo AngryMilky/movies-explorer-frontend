@@ -106,7 +106,7 @@
   cursor: pointer;
 }
 
-.movies-card__button-delete_active {
+.movies-card__button-delete {
   background-image: url(../../../images/button_delete.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -118,7 +118,7 @@
   
 }
 
-.movies-card__button-delete {
+/* .movies-card__button-delete {
   background-image: url(../../../images/button_delete.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -128,7 +128,7 @@
   width: 21px;
   height: 21px;
   display: none;
-}
+} */
 
 .movies-card__button-delete:hover {
   cursor: pointer;

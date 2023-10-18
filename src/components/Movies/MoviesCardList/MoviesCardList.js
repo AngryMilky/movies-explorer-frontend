@@ -116,11 +116,6 @@ function MoviesCardList({foundMovies, onSaveMovie, onDeleteMovie, savedMovies}) 
       }
   }
 
-
-
-
-
-
   return (
     <section className="movies-card-list">
       <p className="movies-card-list__not-found">Фильмы не найдены</p>
@@ -145,7 +140,7 @@ function MoviesCardList({foundMovies, onSaveMovie, onDeleteMovie, savedMovies}) 
           Ещё
         </button>
       ) : (
-        // Когда все карточки отрисованы, кнопка «Ещё» должна пропасть.
+        
         ""
       )}
 
