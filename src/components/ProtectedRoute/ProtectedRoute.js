@@ -11,8 +11,7 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
   }, []);
 
   return (
-    () => loggedIn ? <Component {...props} /> : <Navigate to="/" />
-
+    loggedIn ? <Component {...props} /> : <Navigate to="/" />
   )
 }
 
