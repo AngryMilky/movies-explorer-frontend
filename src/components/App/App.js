@@ -157,7 +157,7 @@ function App() {
   // Обновление данных пользователя
   function handleUpdateUser({ name, email }) {
     setIsLoading(true);
-    mainApi.updateUserInfo({ name, email })
+    mainApi.editUserInfo({ name, email })
       .then((res) => {
         //обновляем стейт currentUser из полученных данных
         setCurrentUser({

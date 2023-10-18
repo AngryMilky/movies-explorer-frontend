@@ -23,7 +23,7 @@ export class MainApi {
       .then(this._checkServerResponse);
   }
 
-  updateUserInfo(data) { //поменять на edit
+  editUserInfo(data) { 
     return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
       headers: {
