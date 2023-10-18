@@ -60,6 +60,20 @@
 
 }
 
+.movies-card__button-save_inactive {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 9px;
+  text-align: center;
+  color: #000000;
+  background-color: #F9F9F9;
+  border-radius: 30px;
+  border: none;
+  width: 72px;
+  height: 21px;
+  display: none; 
+}
+
 .movies-card__button-save:hover {
   cursor: pointer;
 }
@@ -73,7 +87,19 @@
   border: none;
   width: 21px;
   height: 21px;
-  /* display: none; */
+  
+}
+
+.movies-card__button-saved_inactive {
+  background-image: url(../../../images/button_saved.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #FF4062;
+  border-radius: 30px;
+  border: none;
+  width: 21px;
+  height: 21px;
+  display: none; 
 }
 
 .movies-card__button-saved:hover {

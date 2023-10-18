@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate, Routes } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({ component: Component, ...props }) => {
   const [loggedIn, setLoggedIn] = useState(true);

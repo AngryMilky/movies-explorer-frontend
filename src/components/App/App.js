@@ -382,7 +382,9 @@ function App() {
                 navigationClass={'navigation__account-icon'}
               />
               <ProtectedRoute
-                moviesCardClass={'movies-card__button-delete'}
+                moviesCardClassDeleteButton={"movies-card__button-delete"}
+                moviesCardClassSavedButton={"movies-card__button-saved"}
+                moviesCardClassSaveButton={"movies-card__button-save"}
                 component={Movies}
                 onSearch={handleSearchMovies}
                 foundMovies={foundMovies}
@@ -407,7 +409,9 @@ function App() {
                 navigationClass={'navigation__account-icon'}
               />
               <ProtectedRoute
-                moviesCardClass={'movies-card__button-delete_active'}
+                moviesCardClassDeleteButton={'movies-card__button-delete_active'}
+                moviesCardClassSavedButton={"movies-card__button-saved_inactive"}
+                moviesCardClassSaveButton={"movies-card__button-save_inactive"}
                 component={SavedMovies}
                 onSearch={handleSearchSavedMovie}
                 onSaveMovie={handleSaveMovie}
