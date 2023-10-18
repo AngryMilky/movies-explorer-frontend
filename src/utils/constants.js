@@ -1,4 +1,4 @@
-export const BASE_URL = 'api.diplom.milky.nomoredomainsrocks.ru';
+export const BASE_URL = 'https://api.diplom.milky.nomoredomainsrocks.ru';
 
 export const BASE_BEATFILMMOVIES_URL = 'https://api.nomoreparties.co';
 
@@ -11,9 +11,9 @@ export const DEVICE_WIDTH_625 = 625;
 export const DEVICE_WIDTH_480 = 480;
 export const DEVICE_WIDTH_320 = 320;
 
-export const MAX_CARDS = 102; //тут 102 вроде как
+export const MAX_CARDS = 102; 
 
-// количество фильмов, отображаемое при нажатии кнопки "Еще" //переименовать
+// количество фильмов, отображаемое при нажатии кнопки "Еще" 
 export const ADD_CARDS_320 = 2;
 export const ADD_CARDS_768 = 2;
 export const ADD_CARDS_1280 = 3;

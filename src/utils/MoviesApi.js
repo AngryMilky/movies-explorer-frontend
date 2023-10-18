@@ -1,4 +1,4 @@
-import { BASE_BEATFILMMOVIES_URL } from './constants'; //поменять название урла
+import { BASE_BEATFILMMOVIES_URL } from './constants';
 
 export class MoviesApi {
   constructor({ url }) {

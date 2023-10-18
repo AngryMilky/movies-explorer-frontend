@@ -66,7 +66,7 @@ function Login({onLogin, isLoading}) {
             id="email"
             placeholder="Ваш email"
             required
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            pattern="^[a-zA-Z0-9_.+\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+$"
             value={userData.email.value || ""}
             onChange={handleChange}
           />

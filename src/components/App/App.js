@@ -23,7 +23,6 @@ import imageSuccess from '../../images/popup-img-success.svg';
 function App() {
 
   const navigate = useNavigate();
-  //по другому работает автоизация переделать
 
   const [currentUser, setCurrentUser] = useState({
     name: "",
@@ -36,9 +35,9 @@ function App() {
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const [allMovies, setAllMovies] = useState([]); // загруженные фильмы при первом поиске
-  const [foundMovies, setFoundMovies] = useState([]); // найденные фильмы
-  const [savedMovies, setSavedMovies] = useState([]); // сохраненные фильмы
+  const [allMovies, setAllMovies] = useState([]); 
+  const [foundMovies, setFoundMovies] = useState([]); 
+  const [savedMovies, setSavedMovies] = useState([]); 
   const [savedMoviesList, setSavedMoviesList] = useState([]);
 
   const [isPreloader, setIsPreloader] = useState(false);
@@ -104,8 +103,7 @@ function App() {
     setIsLoading(true);
     auth.register({ name, password, email })
       .then(() => {
-        //Попап успешной регистрации
-         setInfoTooltipImage(imageSuccess);
+        setInfoTooltipImage(imageSuccess);
         setMessage('Вы успешно зарегистрировались!');
         setInfoTooltipOpen(true);
 
@@ -113,7 +111,6 @@ function App() {
         navigate('/movies');
       })
       .catch((err) => {
-        //Попап ошибки регистрации
         setInfoTooltipImage(imageFail);
         setMessage('Что-то пошло не так! Попробуйте ещё раз.');
         setInfoTooltipOpen(true);
@@ -131,21 +128,17 @@ function App() {
           localStorage.setItem("jwt", res.token);
           tokenCheck();
 
-          //Попап успешного логина
           setInfoTooltipImage(imageSuccess);
           setMessage('Вы успешно авторизованы!');
           setInfoTooltipOpen(true);
-
-          //Переадресация пользователя на основную страницу со всей функциональностью приложения
           navigate('/movies');
         }
       })
       .catch((err) => {
-        //Попап ошибки входа
+       
         setInfoTooltipImage(imageFail);
         setMessage('Вы ввели неверный e-mail или пароль!');
         setInfoTooltipOpen(true);
-
         console.log(`Ошибка ${err}`);
       })
   }
@@ -172,15 +165,12 @@ function App() {
           email: res.email
         });
 
-        //Попап успешного редактирования
         setInfoTooltipImage(imageSuccess);
         setMessage('Вы успешно изменили данные!');
         setInfoTooltipOpen(true);
       })
       .catch((err) => {
         console.log(`Ошибка ${err}`);
-
-        //Попап ошибки редактирования
         setInfoTooltipImage(imageFail);
         setMessage('Что-то пошло не так! Попробуйте ещё раз.');
         setInfoTooltipOpen(true);
@@ -196,7 +186,6 @@ function App() {
   function handleSearchMovies(movie, checked) {
     if (allMovies.length !== 0) {
       const searchMovies = allMovies.filter((item) =>
-        // Поиск фильмов регистронезависимый
         item.nameRU.toLowerCase().includes(movie.toLowerCase()));
 
       if (searchMovies.length === 0) {
@@ -204,8 +193,6 @@ function App() {
         setMessage('По вашему запросу ничего не найдено');
         setInfoTooltipOpen(true);
       } else {
-        // При поиске текст запроса, найденные фильмы и состояние переключателя короткометражек
-        // сохраняются в хранилище.
         localStorage.setItem("searchWord", movie);
         localStorage.setItem("searchedMovies", JSON.stringify(searchMovies));
         localStorage.setItem("checkboxStatus", JSON.stringify(checked));
@@ -215,7 +202,7 @@ function App() {
     } else {
       setIsPreloader(true);
 
-      // Запрос всех фильмов с сервиса beatfilm-movies производится только при первом поиске
+      // Запрос всех фильмов с сервиса beatfilm-movies 
       moviesApi.getInitialMovies()
         .then((requestMovies) => {
           requestMovies = requestMovies.map((item) => {
@@ -226,7 +213,6 @@ function App() {
           });
 
           const searchMovies = requestMovies.filter((item) =>
-            // Поиск фильмов регистронезависимый
             item.nameRU.toLowerCase().includes(movie.toLowerCase()));
 
           if (searchMovies.length === 0) {
@@ -234,8 +220,6 @@ function App() {
             setMessage('По вашему запросу ничего не найдено');
             setInfoTooltipOpen(true);
           } else {
-            // При поиске текст запроса, найденные фильмы и состояние переключателя короткометражек
-            // сохраняются в хранилище.
             localStorage.setItem("loadedMovies", JSON.stringify(requestMovies));
             setAllMovies(requestMovies);
             localStorage.setItem("searchWord", movie);
@@ -251,10 +235,10 @@ function App() {
     }
   }
 
-  // Поиск короткометражек, управление чекбоксом "Короткометражки"
+  // Поиск короткометражек, управление чекбоксом 
   function handleCheckboxMovies(checkbox) {
-    let shortMovies;
 
+    let shortMovies;
     let movies = JSON.parse(localStorage.getItem("searchedMovies"));
 
     if (checkbox) {
@@ -263,7 +247,6 @@ function App() {
       shortMovies = movies;
     }
     setFoundMovies(shortMovies);
-    // Сохраняем состояние переключателя короткометражек в хранилище.
     localStorage.setItem("checkboxStatus", JSON.stringify(checkbox));
   }
 
@@ -318,13 +301,12 @@ function App() {
       setInfoTooltipOpen(true);
       setIsPreloader(false);
     } else {
-      // При поиске состояние переключателя короткометражек сохраняется в хранилище.
       setSavedMovies(searchMovies);
       setIsPreloader(false);
     }
   }
 
-  // Поиск короткометражек в сохраненных фильмах, управление чекбоксом "Короткометражки"
+  // Поиск короткометражек в сохраненных фильмах, управление чекбоксом 
   function handleCheckboxSavedMovies(checkbox) {
     if (checkbox) {
       setSavedMovies(savedMovies.filter((item) => item.duration <= SHORT_MOVIE_DURATION));
@@ -343,7 +325,6 @@ function App() {
           <Route exact path="/" element={
             <>
               <Header loggedIn={loggedIn}
-                //loggedIn={true}
                 headerClass={'header__main'}
                 navigationClass={'navigation__main-account-icon'}
               />
