@@ -1,27 +1,27 @@
 import React from 'react';
-import {BASE_BEATFILMMOVIES_URL, handleMovieDuration} from "../../../utils/constants";
+import { BASE_BEATFILMMOVIES_URL, handleMovieDuration } from "../../../utils/constants";
 
-function MoviesCard({moviesCardClass, movie, onSaveMovie, onDeleteMovie, savedMovies}) {
+function MoviesCard({ moviesCardClassDeleteButton, moviesCardClassSavedButton, moviesCardClassSaveButton, movie, onSaveMovie, onDeleteMovie, savedMovies }) {
   const isSaved = savedMovies.find((item) => item.movieId === movie.id);
 
   function handleSaveMovie() {
-      if (!isSaved) {
-          onSaveMovie(movie);
-      } else {
-          onDeleteMovie(movie);
-      }
+    if (!isSaved) {
+      onSaveMovie(movie);
+    } else {
+      onDeleteMovie(movie);
+    }
   }
 
   function handleDeleteMovie() {
-      onDeleteMovie(movie);
+    onDeleteMovie(movie);
   }
-  
+
   return (
     <li className="movies-card">
       <a href={movie.trailerLink} target="blank">
-        <img 
-          className="movies-card__image" 
-          src={movie.image.url ? `${BASE_BEATFILMMOVIES_URL}/${movie.image.url}` : movie.image} 
+        <img
+          className="movies-card__image"
+          src={movie.image.url ? `${BASE_BEATFILMMOVIES_URL}/${movie.image.url}` : movie.image}
           alt={`Постер фильма "${movie.nameRU}"`}
         />
       </a>
@@ -30,21 +30,22 @@ function MoviesCard({moviesCardClass, movie, onSaveMovie, onDeleteMovie, savedMo
         <p className="movies-card__container-duration">{handleMovieDuration(movie.duration, movie)}</p>
       </div>
       <div className="movies-card__button">
-        <button 
-          className={isSaved ? "movies-card__button-saved" : "movies-card__button-save"}
+        <button
+          className={isSaved ? { moviesCardClassSavedButton } : { moviesCardClassSaveButton }}
+
           type="button"
           onClick={handleSaveMovie}
         > {!isSaved ? "Сохранить" : ""}
         </button>
-        
-        <button 
-          className={moviesCardClass} 
+
+        <button
+          className={moviesCardClassDeleteButton}
           type="button"
           onClick={handleDeleteMovie}
         />
       </div>
     </li>
- );
+  );
 }
 
 export default MoviesCard;

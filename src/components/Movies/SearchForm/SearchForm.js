@@ -93,6 +93,7 @@ function SearchForm ({onSearch, onSubmitCheckbox}) {
           onSubmitCheckbox={handleChangeCheckbox}
         />
       </form>
+      <span className="search-form__error">{searchError.errorMessage}</span>
     </section>
   )
 }

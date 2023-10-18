@@ -1,7 +1,6 @@
 .movies {
   width: 100%;
   max-width: 1280px;
-  min-height: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,13 +12,13 @@
 @media screen and (max-width: 770px) {
   .movies {
     max-width: 770px;
-    min-height: 11470px;
+    
   }
 }
 
 @media screen and (max-width: 500px) {
   .movies {
     max-width: 500px;
-    min-height: 500px;
+    
   }
 }
