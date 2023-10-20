@@ -4,7 +4,9 @@ import SearchForm from "./SearchForm/SearchForm";
 import Preloader from "../Preloader/Preloader";
 
 
-function Movies({moviesCardClassDeleteButton, moviesCardClassSavedButton, moviesCardClassSaveButton, onSearch, foundMovies, savedMovies, onSaveMovie, onDeleteMovie, onSubmitCheckbox, preloaderStatus}) {
+function Movies({ moviesCardClassDeleteButton, moviesCardClassSavedButton,
+  moviesCardClassSaveButton, onSearch, foundMovies, savedMovies, onSaveMovie,
+  onDeleteMovie, onSubmitCheckbox, preloaderStatus, moviesCardClassButtonElse}) {
   return (
     <main className="movies">
       <SearchForm
@@ -13,17 +15,19 @@ function Movies({moviesCardClassDeleteButton, moviesCardClassSavedButton, movies
       />
 
       {preloaderStatus ? (
-                <Preloader />
-            ) : (
-      <MoviesCardList
-        moviesCardClassDeleteButton={moviesCardClassDeleteButton} 
-        moviesCardClassSavedButton={moviesCardClassSavedButton}
-        moviesCardClassSaveButton={moviesCardClassSaveButton}
-        foundMovies={foundMovies}
-        onSaveMovie={onSaveMovie}
-        onDeleteMovie={onDeleteMovie}
-        savedMovies={savedMovies}
-      />
+        <Preloader />
+      ) : (
+        <MoviesCardList
+          moviesCardClassDeleteButton={moviesCardClassDeleteButton}
+          moviesCardClassSavedButton={moviesCardClassSavedButton}
+          moviesCardClassSaveButton={moviesCardClassSaveButton}
+          foundMovies={foundMovies}
+          onSaveMovie={onSaveMovie}
+          onDeleteMovie={onDeleteMovie}
+          savedMovies={savedMovies}
+
+          moviesCardClassButtonElse={moviesCardClassButtonElse}
+        />
       )}
     </main>
   )

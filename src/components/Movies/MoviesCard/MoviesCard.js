@@ -4,10 +4,6 @@ import { BASE_BEATFILMMOVIES_URL, handleMovieDuration } from "../../../utils/con
 function MoviesCard({ moviesCardClassDeleteButton, moviesCardClassSavedButton, moviesCardClassSaveButton, movie, onSaveMovie, onDeleteMovie, savedMovies }) {
   const isSaved = savedMovies.find((item) => item.movieId === movie.id);
 
-  console.log(moviesCardClassDeleteButton);
-  console.log(moviesCardClassSavedButton);
-  console.log(moviesCardClassSaveButton);
-
   function handleSaveMovie() {
     if (!isSaved) {
       onSaveMovie(movie);

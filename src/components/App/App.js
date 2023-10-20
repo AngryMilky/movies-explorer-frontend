@@ -16,7 +16,7 @@ import mainApi from "../../utils/MainApi";
 import * as auth from '../../utils/auth.js';
 import { SHORT_MOVIE_DURATION, URL_REGEX } from "../../utils/constants";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import imageFail from '../../images/popup-img-fail.svg'; //поменяла название
+import imageFail from '../../images/popup-img-fail.svg';
 import imageSuccess from '../../images/popup-img-success.svg';
 
 
@@ -201,7 +201,7 @@ function App() {
       }
     } else {
       setIsPreloader(true);
-
+      
       // Запрос всех фильмов с сервиса beatfilm-movies 
       moviesApi.getInitialMovies()
         .then((requestMovies) => {
@@ -385,6 +385,7 @@ function App() {
                 moviesCardClassDeleteButton={"movies-card__button-delete"}
                 moviesCardClassSavedButton={"movies-card__button-saved"}
                 moviesCardClassSaveButton={"movies-card__button-save"}
+                moviesCardClassButtonElse={"movies-card-list__button"}
                 component={Movies}
                 onSearch={handleSearchMovies}
                 foundMovies={foundMovies}
@@ -412,6 +413,7 @@ function App() {
                 moviesCardClassDeleteButton={'movies-card__button-delete_active'}
                 moviesCardClassSavedButton={"movies-card__button-saved_inactive"}
                 moviesCardClassSaveButton={"movies-card__button-save_inactive"}
+                moviesCardClassButtonElse={"movies-card-list__button_inactive"}
                 component={SavedMovies}
                 onSearch={handleSearchSavedMovie}
                 onSaveMovie={handleSaveMovie}
@@ -419,6 +421,8 @@ function App() {
                 savedMovies={savedMovies}
                 onSubmitCheckbox={handleCheckboxSavedMovies}
                 preloaderStatus={isPreloader}
+
+                renderedMovies={foundMovies}
               />
               <ProtectedRoute
                 component={Footer}

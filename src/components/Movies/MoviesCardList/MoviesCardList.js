@@ -5,7 +5,7 @@ import {
     DEVICE_WIDTH_1280,
     MAX_CARDS,
     DEVICE_WIDTH_320,
-    DEVICE_WIDTH_625,
+    DEVICE_WIDTH_630,
     DEVICE_WIDTH_1101,
     ADD_CARDS_1280,
     ADD_CARDS_768,
@@ -16,7 +16,8 @@ import {
     LOAD_CARDS_625, LOAD_CARDS_320
 } from "../../../utils/constants";
 
-function MoviesCardList({moviesCardClassDeleteButton, moviesCardClassSavedButton, moviesCardClassSaveButton, foundMovies, onSaveMovie, onDeleteMovie, savedMovies}) {
+function MoviesCardList({moviesCardClassDeleteButton, moviesCardClassSavedButton, moviesCardClassSaveButton, 
+  foundMovies, onSaveMovie, onDeleteMovie, savedMovies, moviesCardClassButtonElse}) {
   const location = useLocation();
 
   //max количество карточек в блоке при первом поиске
@@ -62,7 +63,7 @@ function MoviesCardList({moviesCardClassDeleteButton, moviesCardClassSavedButton
           //Ширина 1280px — 12 карточек по 3 в ряд
           setFoundMovies(LOAD_CARDS_1101);
 
-      } else if (deviceWidth >= DEVICE_WIDTH_625) {
+      } else if (deviceWidth >= DEVICE_WIDTH_630) {
           //Ширина 768px — 8 карточек по 2 в ряд
           setFoundMovies(LOAD_CARDS_625);
 
@@ -103,7 +104,7 @@ function MoviesCardList({moviesCardClassDeleteButton, moviesCardClassSavedButton
           //Ширина 1280px — 12 карточек по 3 в ряд. Кнопка «Ещё» загружает по 3 карточки.
           setMaxCards(maxCards + ADD_CARDS_1280);
 
-      } else if (deviceWidth >= DEVICE_WIDTH_625) {
+      } else if (deviceWidth >= DEVICE_WIDTH_630) {
           //Ширина 768px — 8 карточек по 2 в ряд. Кнопка «Ещё» загружает по 2 карточки
           setMaxCards(maxCards + ADD_CARDS_768);
 
@@ -136,7 +137,7 @@ function MoviesCardList({moviesCardClassDeleteButton, moviesCardClassSavedButton
       
       {foundMovies.length !== renderedMovies.length ? (
         <button
-          className="movies-card-list__button"
+          className={moviesCardClassButtonElse}
           type="button"
           onClick={handleAddButtonClick}
         >

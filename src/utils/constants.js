@@ -6,7 +6,7 @@ export const DEVICE_WIDTH_1280 = 1280;
 export const DEVICE_WIDTH_1100 = 1100;
 export const DEVICE_WIDTH_1101 = 1101;
 export const DEVICE_WIDTH_768 = 768;
-export const DEVICE_WIDTH_625 = 625;
+export const DEVICE_WIDTH_630 = 630;
 export const DEVICE_WIDTH_480 = 480;
 export const DEVICE_WIDTH_320 = 320;
 
