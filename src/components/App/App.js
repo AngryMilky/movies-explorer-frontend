@@ -196,8 +196,8 @@ function App() {
         localStorage.setItem("searchWord", movie);
         localStorage.setItem("searchedMovies", JSON.stringify(searchMovies));
         localStorage.setItem("checkboxStatus", JSON.stringify(checked));
-
-        setFoundMovies(searchMovies);
+        handleCheckboxMovies(JSON.stringify(checked));
+        
       }
     } else {
       setIsPreloader(true);
@@ -225,7 +225,8 @@ function App() {
             localStorage.setItem("searchWord", movie);
             localStorage.setItem("searchedMovies", JSON.stringify(searchMovies));
             localStorage.setItem("checkboxStatus", JSON.stringify(checked));
-            setFoundMovies(searchMovies);
+            handleCheckboxMovies(JSON.stringify(checked));
+            
           }
         })
         .catch((err) => {
@@ -256,7 +257,7 @@ function App() {
       .then((res) => {
         setSavedMovies(savedMovies.concat(res));
         setSavedMoviesList(savedMoviesList.concat(res));
-        console.log(movie.trailerLink)
+        
       })
       .catch((err) => {
         console.log(`Ошибка ${err}`);
@@ -264,12 +265,13 @@ function App() {
   }
 
   // Удаление фильма
-  function handleDeleteMovie(movie) {
-    mainApi.deleteMovie(movie._id)
+  function handleDeleteMovie(_id) {
+    mainApi.deleteMovie(_id)
       .then(() => {
-        const updatedMoviesList = savedMovies.filter((item) => item._id !== movie._id);
+        const updatedMoviesList = 
+        savedMovies.filter((item) => item._id !== _id);
         setSavedMovies(updatedMoviesList);
-        setSavedMoviesList(savedMoviesList.filter((item) => item._id !== movie._id));
+        setSavedMoviesList(savedMoviesList.filter((item) => item._id !== _id));
       })
       .catch((err) => {
         console.log(`Ошибка ${err}`);

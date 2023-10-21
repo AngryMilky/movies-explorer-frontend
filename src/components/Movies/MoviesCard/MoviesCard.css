@@ -76,7 +76,7 @@
 
 .movies-card__button-save:hover {
   cursor: pointer;
-  opacity: 1;
+  
 }
 
 .movies-card__button-saved {
@@ -134,8 +134,17 @@
 
 .movies-card__button-delete_active:hover {
   cursor: pointer;
+  
+}
+
+.movies-card:hover .movies-card__button-delete_active {
   opacity: 1;
 }
+
+.movies-card:hover .movies-card__button-save {
+  opacity: 1;
+}
+
 
 .movies-card__container-duration {
   margin-top: 18px;

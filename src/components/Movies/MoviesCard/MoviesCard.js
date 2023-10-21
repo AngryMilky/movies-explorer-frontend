@@ -8,12 +8,12 @@ function MoviesCard({ moviesCardClassDeleteButton, moviesCardClassSavedButton, m
     if (!isSaved) {
       onSaveMovie(movie);
     } else {
-      onDeleteMovie(movie);
+      onDeleteMovie(isSaved._id);
     }
   }
 
   function handleDeleteMovie() {
-    onDeleteMovie(movie);
+    onDeleteMovie(movie._id);
   }
 
   return (
