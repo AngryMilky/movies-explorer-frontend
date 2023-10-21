@@ -12,7 +12,7 @@
   border-radius: 6px;
   max-width: 360px;
   max-height: 201px;
-  /* width: 100%; */
+  width: 100%;
   padding: 0;
   margin: 0;
 }
@@ -38,13 +38,12 @@
   position: absolute;
   top: 14px;
   right: 14px;
-  opacity: 0;
   transition: opacity .35s ease-in-out;
 }
 
-.movies-card:hover .movies-card__button {
+ .movies-card:hover .movies-card__button {
   opacity: 1;
-}
+} 
 
 .movies-card__button-save {
   font-weight: 400;
@@ -57,11 +56,27 @@
   border: none;
   width: 72px;
   height: 21px;
+  opacity: 0;
 
+}
+
+.movies-card__button-save_inactive {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 9px;
+  text-align: center;
+  color: #000000;
+  background-color: #F9F9F9;
+  border-radius: 30px;
+  border: none;
+  width: 72px;
+  height: 21px;
+  display: none; 
 }
 
 .movies-card__button-save:hover {
   cursor: pointer;
+  
 }
 
 .movies-card__button-saved {
@@ -73,7 +88,36 @@
   border: none;
   width: 21px;
   height: 21px;
-  display: none;
+  opacity: 1;
+}
+
+.movies-card__button-saved_inactive {
+  background-image: url(../../../images/button_saved.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #FF4062;
+  border-radius: 30px;
+  border: none;
+  width: 21px;
+  height: 21px;
+  display: none; 
+}
+
+.movies-card__button-saved:hover {
+  cursor: pointer;
+}
+
+.movies-card__button-delete_active {
+  background-image: url(../../../images/button_delete.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F9F9F9;
+  border-radius: 30px;
+  border: none;
+  width: 21px;
+  height: 21px;
+  opacity: 0;
+  
 }
 
 .movies-card__button-delete {
@@ -88,9 +132,19 @@
   display: none;
 }
 
-.movies-card__button-delete:hover {
+.movies-card__button-delete_active:hover {
   cursor: pointer;
+  
 }
+
+.movies-card:hover .movies-card__button-delete_active {
+  opacity: 1;
+}
+
+.movies-card:hover .movies-card__button-save {
+  opacity: 1;
+}
+
 
 .movies-card__container-duration {
   margin-top: 18px;
@@ -156,11 +210,11 @@
 
 @media screen and (max-width: 750px) {
   .movies-card__image {
-    max-width: 360px;
+    max-width: 100%;
   }
 
   .movies-card {
-    max-width: 360px;
+    max-width: 300px;
   }
 }
 
@@ -185,8 +239,8 @@
     position: absolute;
     top: 14px;
     right: 14px;
-    opacity: 0;
     transition: opacity .35s ease-in-out;
+    opacity: 1;
   }
 
   .movies-card__button-save {
@@ -199,9 +253,16 @@
     border: none;
     width: 72px;
     height: 21px;
+    opacity: 1;
   }
 
   .movies-card__container-duration {
     margin-top: 20px;
   }
+
+  .movies-card__button-delete_active {
+    opacity: 1;
+  }
+
+
 }

@@ -23,6 +23,7 @@
 @import url(../src/components/Movies/MoviesCard/MoviesCard.css);
 @import url(../src/components/Movies/MoviesCardList/MoviesCardList.css);
 @import url(../src/components/Movies/SearchForm/SearchForm.css);
+@import url(../src/components/Preloader/Preloader.css);
 
 @import url(../src/components/Navigation/Navigation.css);
 
@@ -35,3 +36,5 @@
 @import url(../src/components/PageNotFound/PageNotFound.css);
 
 @import url(../src/components/BurgerMenu/BurgerMenu.css);
+
+@import url(../src/components/InfoTooltip/InfoTooltip.css);

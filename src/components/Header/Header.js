@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from '../../images/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
@@ -6,10 +6,16 @@ import Navigation from '../Navigation/Navigation';
 
 function Header({ loggedIn, headerClass, navigationClass }) {
 
-  // для хедера на главной странице
-  // headerClass = {"header__main"};
-  // для хедера на остальных страницах
-  // headerClass = "header__auth";
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+
+  function handleOpenBurgerMenu() {
+    setIsBurgerMenuOpen(true);
+    console.log(isBurgerMenuOpen)
+  }
+
+  function handleCloseBurgerMenu() {
+    setIsBurgerMenuOpen(false);
+  }
 
   return (
 
@@ -21,8 +27,16 @@ function Header({ loggedIn, headerClass, navigationClass }) {
           <div className="header__auth-container">
             <Navigation navigationClass={navigationClass} />
           </div>
-          <button className="header__burger-menu-button" type="button" />
-          <BurgerMenu />
+          <button
+            className="header__burger-menu-button"
+            onClick={handleOpenBurgerMenu}
+            type="button" />
+
+          <BurgerMenu
+            isOpen={isBurgerMenuOpen}
+            onCloseBurgerMenu={handleCloseBurgerMenu}
+          />
+
         </>
       )}
 
